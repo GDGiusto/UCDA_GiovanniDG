@@ -1,20 +1,9 @@
-# This is a sample Python script.
+#importing Google dataset
+import pandas as pd
+df = pd.read_csv (r"D:\DataAnalysis\01_assestament\Google-Playstore.csv")
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#checking shape of the dataset
+print (df.shape)
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name} !!!')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-a=20
-b=33
-c=a+b
-print (a,b,c)
+# checking first 10 rows
+print(df.head(10))
