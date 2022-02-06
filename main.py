@@ -1,6 +1,11 @@
 #importing Google dataset
 import pandas as pd
 df = pd.read_csv (r"D:\DataAnalysis\01_assestament\Google-Playstore.csv")
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
 
 #checking shape of the dataset
 print (df.shape)
