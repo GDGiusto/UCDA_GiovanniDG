@@ -1,29 +1,16 @@
-#importing Google dataset
 import pandas as pd
-df = pd.read_csv (r"D:\DataAnalysis\01_assestament\Google-Playstore.csv")
-import matplotlib.pyplot as plt
-import numpy as np
+# import graphviz
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
+from sklearn import tree
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, confusion_matrix, roc_curve, roc_auc_score
+# from sklearn.externals.six import StringIO
+from IPython.display import Image
+from sklearn.tree import export_graphviz
+import pydotplus
 
-
-
-
-#checking shape of the dataset
-print (df.shape)
-
-#checking columns
-print(df.columns)
-# checking first 10 rows
-print(df.head(10))
-#checking missing values, only total per column
-print(df.isnull().sum())
-
-#eliminating columns that are not useful for my analysis to have a more lean database
-#dropping duplicate app ID to avoid duplicate values
-
-
-#filling empty places in columns with value 0 to have a complete set of data
-filldata = df.fillna(0)
-## print filldata to verify system has fulfilled the comand printing filldata.isnull().sum()
-
-
+data = pd.read_csv(r"D:\DataAnalysis\01_assestament\breast-cancer.csv")
+# checking tail of the dataset to calculate ideal test enviroment
+print(data.tail())
 
