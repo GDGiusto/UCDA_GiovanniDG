@@ -30,7 +30,6 @@ print (df4['diagnosis'].value_counts())
 #creating graphs features
 plt.figure(figsize=(10,18), facecolor='white')
 plotnumber = 1
-
 for column in df4:
     if plotnumber<=31 and column!='diagnosis' :
         ax = plt.subplot(8,4,plotnumber)
@@ -40,9 +39,18 @@ for column in df4:
     plotnumber+=1
 print(plt.show())
 
-#checking outliners
-fig, ax = plt.subplots(figsize=(15,10))
-print(sns.boxplot(data=df4, width= 0.5,ax=ax,  fliersize=3))
+#checking for outliers with visualization
+fig, ax = plt.subplots(figsize=(15, 10))
+print(sns.boxplot(data=df4, width=0.5, ax=ax,  fliersize=3))
+#checking outliers with IQR
+Q1 = df4.quantile(0.25)
+Q3 = df4.quantile(0.75)
+IQR = Q3 - Q1
+print('IQR results')
+print(IQR)
+#cleaning outliers
+#def clean_outliers()
+   # for i in
 
 #splitting dataset into input features and output feature
 X = df4.drop(columns = 'diagnosis')
